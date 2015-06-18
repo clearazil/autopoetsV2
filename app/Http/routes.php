@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+$router->get('/', ['as' => 'index', 'uses' => 'HomeController@index']);
+
+$router->get('admin/login', ['as' => 'admin.index', 'uses' => function() {
+	return 'admin login';
+}]);
