@@ -6,8 +6,11 @@
     <meta name="description" content="Your description">
     <meta name="keywords" content="Your keywords">
     <meta name="author" content="Your name">
+    
+    {!! HTML::style('css/bootstrap.min.css') !!}
     {!! HTML::style('css/styles.css') !!}
     {!! HTML::style('css/nivo-slider.css', ['media' => 'screen']) !!}
+
 </head>
 <body>
 <!-- Header -->
@@ -69,6 +72,7 @@
 </footer>
     {!! HTML::script('js/jquery-1.11.3.min.js') !!}
     {!! HTML::script('js/jquery.nivo.slider.pack.js') !!}
+    {!! HTML::script('js/bootstrap.min.js') !!}
     {!! HTML::script('js/app.js') !!}
 
 
