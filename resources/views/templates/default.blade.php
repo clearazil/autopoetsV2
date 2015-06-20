@@ -16,14 +16,27 @@
 <!-- Header -->
 <div class="bg-1">
 	<header>
+                               @if(Auth::check())
+            <ul class="menu admin-control-panel">
+                <li>
+                    <a class="" href="{{route('admin.index')}}">Admin Controlepaneel</a>
+                </li>
+                <li>
+                    <a class="logout" href="{{route('logout')}}">Uitloggen</a>
+                </li>
+            </ul>
+
+        @endif
     	<div class="header_bg1">
             <div class="header_bg2">
+
                 <h1><a href="#">metamorph_curtain</a></h1>
 				<h2>Small Company Slogan Here</h2>
             	<div class="main">
+
               <nav>
                         <ul class="menu">
-                            <li><a class="active" href="index.html">Home</a></li>
+                            <li><a class="active" href="{{route('index')}}">Home</a></li>
                             <li><a href="#">About Us</a></li>
                             <li><a href="#">Services</a></li>
                             <li class="fright"><a href="#">Contact</a></li>
@@ -42,9 +55,9 @@
  	
 	<div id="slider-wrapper">        
             <div id="slider" class="nivoSlider">
-                <img src="images/slider1.jpg" alt="" />
-                <img src="images/slider2.jpg" alt=""/>
-                <img src="images/slider3.jpg" alt="" />
+                <img src="{{asset('images/slider1.jpg')}}" alt="" />
+                <img src="{{asset('images/slider2.jpg')}}" alt=""/>
+                <img src="{{asset('images/slider3.jpg')}}" alt="" />
             </div>        
         </div>
 
@@ -61,9 +74,9 @@
             <article class="grid_6">
                 <div class="wrapper">
                     <ul class="soc_list">
-                    	<li><a href="#"><img src="images/f1.png" alt=""></a></li>
-                    	<li><a href="#"><img src="images/f2.png" alt=""></a></li>
-                    	<li><a href="#"><img src="images/f3.png" alt=""></a></li>
+                    	<li><a href="#"><img src="{{asset('images/f1.png')}}" alt=""></a></li>
+                    	<li><a href="#"><img src="{{asset('images/f2.png')}}" alt=""></a></li>
+                    	<li><a href="#"><img src="{{asset('images/f3.png')}}" alt=""></a></li>
                     </ul>
                 </div>
             </article>

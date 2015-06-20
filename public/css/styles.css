@@ -7,7 +7,7 @@ Released for free under a Creative Commons Attribution 2.5 License
 @import url(http://fonts.googleapis.com/css?family=Keania+One);
 @import"reset.css";
 @import"grid.css";
-
+html{overflow-y: scroll;}
 body{background:#000000 url(/images/back_all.jpg) fixed center top no-repeat;font:13px/22px Arial, Times, serif;color:#fff;position:relative;min-width:980px;}
 html,body{height:100%;}
 p,.p{padding-bottom:22px;}
@@ -476,3 +476,18 @@ a.nivo-prevNav {
     text-decoration:underline;
 }
 
+.admin-control-panel {
+	width: 22em;
+	padding: 0.5em;
+	position: absolute;
+}
+.admin-control-panel li {
+	float: none;
+}
+.admin-control-panel li .logout {
+	width: 4em;
+	margin-top: 1em;
+	font-size: 1.2em;
+	text-transform: initial;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}

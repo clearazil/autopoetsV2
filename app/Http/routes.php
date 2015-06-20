@@ -14,6 +14,10 @@
 
 $router->get('/', ['as' => 'index', 'uses' => 'HomeController@index']);
 
-$router->get('admin/login', ['as' => 'admin.index', 'uses' => function() {
-	return 'admin login';
-}]);
+$router->get('admin/login', ['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);
+
+
+$router->post('admin/login', ['as' => 'post_login', 'uses' => 'Auth\AuthController@postLogin']);
+
+$router->get('admin/logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@getLogout']);
+$router->get('admin', ['as' => 'admin.index', 'uses' => 'HomeController@admin']);
