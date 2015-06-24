@@ -5,6 +5,8 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
+use Redirect;
+
 class Handler extends ExceptionHandler
 {
     /**
@@ -38,6 +40,10 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+        
+        if($e instanceof \Autopoets\Forms\FormValidationException) {
+            return Redirect::back()->withInput()->withErrors($e->getErrors());
+        }
         return parent::render($request, $e);
     }
 }

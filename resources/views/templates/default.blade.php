@@ -10,13 +10,14 @@
     {!! HTML::style('css/bootstrap.min.css') !!}
     {!! HTML::style('css/styles.css') !!}
     {!! HTML::style('css/nivo-slider.css', ['media' => 'screen']) !!}
+    @yield('css')
 
 </head>
 <body>
 <!-- Header -->
 <div class="bg-1">
 	<header>
-                               @if(Auth::check())
+        @if(Auth::check())
             <ul class="menu admin-control-panel">
                 <li>
                     <a class="" href="{{route('admin.index')}}">Admin Controlepaneel</a>
@@ -36,7 +37,7 @@
 
               <nav>
                         <ul class="menu">
-                            <li><a class="active" href="{{route('index')}}">Home</a></li>
+                            <li><a class="active" href="{{route('news.index')}}">Home</a></li>
                             <li><a href="#">About Us</a></li>
                             <li><a href="#">Services</a></li>
                             <li class="fright"><a href="#">Contact</a></li>
@@ -87,6 +88,8 @@
     {!! HTML::script('js/jquery.nivo.slider.pack.js') !!}
     {!! HTML::script('js/bootstrap.min.js') !!}
     {!! HTML::script('js/app.js') !!}
+
+    @yield('javascript')
 
 
 </div>
