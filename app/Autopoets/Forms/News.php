@@ -8,7 +8,7 @@ class News extends FormValidator {
 	 */
 	protected $rules = [
 		'title' => 'required',
-		'file'	=> 'required',
+		'file'	=> 'required|image',
 		'message' => 'required'
 	];
 }
