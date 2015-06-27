@@ -4,7 +4,7 @@
 <section id="content">
     <div class="container_12">
     	<h1>Nieuw Nieuws... haha!</h1>
-    	{!! Form::open(['route' => 'news.store', 'role' => 'form', 'class' => 'form-horizontal']) !!}
+    	{!! Form::open(['route' => 'news.store', 'role' => 'form', 'files' => true, 'class' => 'form-horizontal']) !!}
     		<div class="form-group">
     			{!! Form::label('title', 'Titel:', ['class' => 'control-label col-sm-3']) !!}
     			<div class="col-sm-7">

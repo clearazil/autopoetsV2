@@ -7,19 +7,17 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Repositories\News\NewsRepository as NewsRepository;
+use Autopoets\Services\NewsService as News;
 
-use Autopoets\Forms\News as NewsForm;
-
-use Input;
+use App\Http\Requests\NewsFormRequest;
 
 
 class NewsController extends Controller
 {
     protected $newsForm;
 
-    public function __construct(NewsRepository $news, NewsForm $newsForm) {
-        $this->newsForm = $newsForm;
+    public function __construct(News $news) 
+    {
         $this->news = $news;
     }
     /**
@@ -47,15 +45,13 @@ class NewsController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(NewsFormRequest $request)
     {
-        try {
-            $this->newsForm->validate(Input::all());
+            $this->news->createNews(Request::all());
+            
 
             return 'Success!';
-        } catch (FormValidationException $e) {
-            return Redirect::back()->withInput()->withErrors($e->getErrors());
-        }
+    
     }
 
     /**
